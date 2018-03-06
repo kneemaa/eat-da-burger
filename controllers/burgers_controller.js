@@ -13,7 +13,7 @@ router.post("/api/burgers", (request,response) => {
 		response.json({ id: result.insertId });
 	})
 
-router.post("/api/burgers/:id", (request,response) => {
+router.delete("/api/burgers/:id", (request,response) => {
 	burger.delete(request.body.id, (result) => {
 		response.json({ id: result.insertId });
 	})
