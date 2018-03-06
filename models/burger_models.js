@@ -9,11 +9,16 @@ const burger = {
 			callback(response);
 		});
 	},
-	create: (callback,name) => {
+	create: (name,callback) => {
 		orm.create("burgers", name, response => {
 			callback(response);
 		});
 	},
+	delete: (id,callback) => {
+		orm.delete("burgers",id, response => {
+			callback(response);
+		})
+	}
 
 };
 

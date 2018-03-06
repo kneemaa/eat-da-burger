@@ -1,28 +1,24 @@
 const connection = require("../config/connection.js");
 
 const orm = {
-	// functions here as
-	// function : function(val) {..},
 	all: (tableName, callback) => {
-		//let query = `SELECT * FROM ${tableName};`;
-		connection.query("SELECT * FROM burgers;", (error,result) => {
+		connection.query("SELECT * FROM ??;",[tableName],(error,result) => {
 			if (error) {
 				console.log(error);
 			}
-			console.log(result);
 			callback(result);
 		});
 	},
 	create: (tableName, name, callback) => {
-		let query = `INSERT INTO ${tableName} (name) VALUES ('${name}')`;
-		connection.query(query, (error,result) => {
+		let query = "INSERT INTO ?? (burger_name) VALUES (?);";
+		connection.query(query,[tableName,name], (error,result) => {
 			if (error) throw error;
 			callback(result);
 		});
 	},
-	eat: (tableName, id, callback) => {
-		let query = `DELETE FROM ${tableName} WHERE id=${id}`;
-		connection.query(query, (error,result) => {
+	delete: (tableName, id, callback) => {
+		let query = "INSERT INTO ?? (id) VALUES (1) WHERE ID=(?);";
+		connection.query(query, [tableName,id], (error,result) => {
 			if (error) throw error;
 			callback(result);
 		});
