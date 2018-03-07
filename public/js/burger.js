@@ -1,6 +1,6 @@
 $(document).on("click","#add-burger", (event) => {
 	event.preventDefault();
-	const burger = {burger: $("#burger-order").val()};
+	const burger = {burger: $("#burger-order").val().trim()};
 	console.log(burger);
 	$.ajax({
 		url: "/api/burgers/",
