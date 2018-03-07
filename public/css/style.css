@@ -1,3 +1,24 @@
-body {
-	background-color: red;
+.burger-wrapper {
+	width: 300px;
+	display: flex; 
+}
+
+.eaten-burgers {
+	color: red;
+}
+
+.uneaten-burgers {
+	color: green;
+}
+
+.burger{
+	display: flex;
+    justify-content: space-between;
+}
+.eat-burger {
+	display: flex;
+	justify-content: space-around;
+}
+.input-container {
+	width: 500px;
 }

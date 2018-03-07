@@ -14,8 +14,8 @@ const burger = {
 			callback(response);
 		});
 	},
-	delete: (id,callback) => {
-		orm.delete("burgers",id, response => {
+	eat: (id,callback) => {
+		orm.eat("burgers",id, response => {
 			callback(response);
 		})
 	}

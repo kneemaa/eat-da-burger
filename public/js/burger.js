@@ -1,9 +1,9 @@
 $(document).on("click","#add-burger", (event) => {
 	event.preventDefault();
-	const burger = {burger: $("#burger-order").val().trim()};
-	
+	const burger = {burger: $("#burger-order").val()};
+	console.log(burger);
 	$.ajax({
-		url: "/api/burgers",
+		url: "/api/burgers/",
 		type: "POST",
 		data: burger
 	}).then( () => {
@@ -15,10 +15,11 @@ $(".eat-burger").click( function(event) {
 	event.preventDefault();
 	let id = $(this).data("id");
 
-	$.ajax("/api/burgers/" + id,
-		{type: "DELETE"
+	$.ajax({
+		url: "/api/burgers/" + id,
+		type: "PUT",
+		 data: id
 	}).then( () => {
-		console.log("nom nom" + id);
 		location.reload();
 	});
 })

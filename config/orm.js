@@ -16,9 +16,9 @@ const orm = {
 			callback(result);
 		});
 	},
-	delete: (tableName, id, callback) => {
-		let query = "INSERT INTO ?? (id) VALUES (1) WHERE ID=(?);";
-		connection.query(query, [tableName,id], (error,result) => {
+	eat: (tableName, id, callback) => {
+		let query = "UPDATE ?? SET is_eaten=1 WHERE id=(?);";
+		connection.query(query, [tableName, id], (error,result) => {
 			if (error) throw error;
 			callback(result);
 		});
